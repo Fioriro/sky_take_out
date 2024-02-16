@@ -26,6 +26,17 @@ public interface CategoryMapper {
      */
     Page<Category> pageQuery(CategoryPageQueryDTO categoryPageQueryDTO);
 
+    /**
+     * 根据id删除分类
+     * @param id
+     */
     @Delete("delete from category where id = #{id}")
     void deleteById(Long id);
+
+
+    /**
+     * 更新分类信息
+     * @param category
+     */
+    void update(Category category);
 }

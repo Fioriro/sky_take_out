@@ -64,4 +64,17 @@ public class CategoryController {
         categoryService.deleteById(id);
         return Result.success();
     }
+
+    /**
+     * 修改分类
+     * @param categoryDTO
+     * @return
+     */
+    @PutMapping
+    @ApiOperation("修改分类")
+    public Result<String> update(@RequestBody CategoryDTO categoryDTO){
+        log.info("修改分类，参数:{}", categoryDTO);
+        categoryService.update(categoryDTO);
+        return Result.success();
+    }
 }
