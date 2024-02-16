@@ -12,6 +12,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * 分类管理
  */
@@ -84,10 +86,22 @@ public class CategoryController {
      * @return
      */
     @PostMapping("status/{status}")
+    @ApiOperation("启用，禁用分类")
     public Result<String> startOrStop(@PathVariable Integer status, Long id){
         log.info("变更分类状态,状态: {},操作人：{}",status, id);
         categoryService.startOrStop(status,id);
         return Result.success();
+    }
 
+    /**
+     * 根据类型查询分类
+     * @param type
+     * @return
+     */
+    @GetMapping("/list")
+    @ApiOperation("根据类型查询分类")
+    public Result<List<Category>> list(@PathVariable Integer type){
+        List<Category> list = categoryService.list(type);
+        return Result.success(list);
     }
 }
