@@ -77,4 +77,17 @@ public class CategoryController {
         categoryService.update(categoryDTO);
         return Result.success();
     }
+
+    /**
+     * 启动禁用分类
+     * @param status
+     * @return
+     */
+    @PostMapping("status/{status}")
+    public Result<String> startOrStop(@PathVariable Integer status, Long id){
+        log.info("变更分类状态,状态: {},操作人：{}",status, id);
+        categoryService.startOrStop(status,id);
+        return Result.success();
+
+    }
 }

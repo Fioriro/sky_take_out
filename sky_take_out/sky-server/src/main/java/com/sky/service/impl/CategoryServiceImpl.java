@@ -112,4 +112,21 @@ public class CategoryServiceImpl implements CategoryService {
 
         categoryMapper.update(category);
     }
+
+    /**
+     * 变更分类状态
+     * @param status
+     * @param id
+     */
+    @Override
+    public void startOrStop(Integer status, Long id) {
+        Category category = Category.builder()
+                .status(status)
+                .id(id)
+                .createTime(LocalDateTime.now())
+                .updateUser(BaseContext.getCurrentId())
+                .build();
+
+        categoryMapper.update(category);
+    }
 }
