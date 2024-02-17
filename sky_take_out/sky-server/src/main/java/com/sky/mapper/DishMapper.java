@@ -57,4 +57,10 @@ public interface DishMapper {
      */
     @Select("select * from dish where id = #{id}")
     Dish getById(Long id);
+
+    /**
+     * 修改菜品信息
+     * @param dish
+     */
+    void update(Dish dish);
 }
