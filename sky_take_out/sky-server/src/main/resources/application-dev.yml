@@ -9,7 +9,7 @@ sky:
 
   alioss:
     endpoint: oss-cn-shanghai.aliyuncs.com
-    access-key-id: LTAI5tHP4Y15cuCARSb1QfK2
-    access-key-secret: IkJz6V4dfLHGoy2kSFx406RpBwE8yK
+    access-key-id: LTAI5tQ8whfTNC3wwfTAXJw5
+    access-key-secret: gLBPfUtCmIOiHAKcOp5gtjBrp0SjOx
     bucket-name: fioriro-sky-take-out
 
