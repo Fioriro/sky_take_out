@@ -12,4 +12,12 @@ public interface SetmealMapper {
      */
     @Select("select count(id) from setmeal where category_id = #{categoryId}")
     Integer countByCategoryId(Long id);
+
+    /**
+     * 根据菜品id查询菜品数量
+     * @param id
+     * @return
+     */
+    @Select("select count(id) from setmeal_dish where dish_id = #{dishId}")
+    Integer countByDishId(Long id);
 }
