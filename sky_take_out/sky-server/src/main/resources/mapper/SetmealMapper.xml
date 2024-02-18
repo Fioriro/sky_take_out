@@ -35,6 +35,7 @@
                  update_user = #{updateUser},
             </if>
         </set>
+        where id = #{id}
     </update>
     <select id="pageQuery" resultType="com.sky.vo.SetmealVO">
         select s.*, c.name categoryName
