@@ -13,3 +13,9 @@ sky:
     access-key-secret: gLBPfUtCmIOiHAKcOp5gtjBrp0SjOx
     bucket-name: fioriro-sky-take-out
 
+  redis:
+    host: localhost
+    port: 6379
+    auth: 123456
+    database: 10
+
