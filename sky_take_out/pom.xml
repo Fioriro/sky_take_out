@@ -138,7 +138,12 @@
                 <scope>test</scope>
             </dependency>
 
-
+<!--            HttpClient-->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>4.5.13</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>
