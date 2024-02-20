@@ -193,6 +193,11 @@ public class DishServiceImpl implements DishService {
         return dishMapper.list(dish);
     }
 
+    /**
+     * 获取菜品信息
+     * @param dish
+     * @return
+     */
     @Override
     public List<DishVO> listWithDishFlavor(Dish dish) {
 //        Dish dish = Dish.builder()
@@ -225,5 +230,19 @@ public class DishServiceImpl implements DishService {
         }
 
         return dishVOList;
+    }
+
+    /**
+     * 菜品起售，停售
+     * @param status
+     * @param id
+     */
+    @Override
+    public void startOrStop(Integer status, Long id) {
+        Dish dish = Dish.builder()
+                .status(status)
+                .id(id)
+                .build();
+        dishMapper.update(dish);
     }
 }
