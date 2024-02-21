@@ -39,6 +39,8 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
         shoppingCart.setUserId(BaseContext.getCurrentId());
 
         //判断当前商品是否在购物车中
+        //因为传入的数据是当前被选中的要添加的商品，所以数据就是这个商品的信息
+        //在数据库中进行查询，获取到的也只有这一个商品的信息
         List<ShoppingCart> shoppingCartList = shoppingCartMapper.list(shoppingCart);
 
         if(shoppingCartList != null && shoppingCartList.size() == 1){
@@ -70,5 +72,11 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
             shoppingCart.setCreateTime(LocalDateTime.now());
             shoppingCartMapper.insert(shoppingCart);
         }
+    }
+
+    @Override
+    public List<ShoppingCart> showShoppingCart() {
+        return shoppingCartMapper.list(ShoppingCart.builder()
+                        .userId(BaseContext.getCurrentId()).build());
     }
 }
