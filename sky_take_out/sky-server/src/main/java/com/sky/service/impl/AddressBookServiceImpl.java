@@ -37,15 +37,6 @@ public class AddressBookServiceImpl implements AddressBookService {
         return addressBookMapper.list(addressBook);
     }
 
-    /**
-     * 查询默认地址
-     * @param addressBook
-     * @return
-     */
-    @Override
-    public AddressBook getDefaultAddress(AddressBook addressBook) {
-        return addressBookMapper.list(addressBook).get(0);
-    }
 
     /**
      * 修改地址

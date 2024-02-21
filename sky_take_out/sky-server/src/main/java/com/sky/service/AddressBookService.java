@@ -18,11 +18,6 @@ public interface AddressBookService {
      */
     List<AddressBook> list(AddressBook addressBook);
 
-    /**
-     * 查询默认地址
-     * @param addressBook
-     */
-    AddressBook getDefaultAddress(AddressBook addressBook);
 
     /**
      * 修改地址

@@ -54,7 +54,7 @@
                 and phone = #{phone}
             </if>
             <if test="isDefault != null">
-                and is_default = #{idDefault}
+                and is_default = #{isDefault}
             </if>
         </where>
     </select>
