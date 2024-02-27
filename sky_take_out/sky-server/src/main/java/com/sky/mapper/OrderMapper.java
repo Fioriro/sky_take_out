@@ -85,9 +85,9 @@ public interface OrderMapper {
 
     /**
      * 查询商品销量排名
-     * @param beginTime
-     * @param endTime
+     * @param begin
+     * @param end
      * @return
      */
-    List<GoodsSalesDTO> getSalesTop10(LocalDateTime beginTime, LocalDateTime endTime);
+    List<GoodsSalesDTO> getSalesTop10(LocalDateTime begin, LocalDateTime end);
 }

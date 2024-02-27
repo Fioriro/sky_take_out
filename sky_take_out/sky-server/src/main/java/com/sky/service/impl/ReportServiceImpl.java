@@ -165,13 +165,10 @@ public class ReportServiceImpl implements ReportService {
     public SalesTop10ReportVO getSalesTop10(LocalDate begin, LocalDate end) {
         LocalDateTime beginTime = LocalDateTime.of(begin, LocalTime.MIN);
         LocalDateTime endTime = LocalDateTime.of(end, LocalTime.MAX);
-        List<GoodsSalesDTO> goodsSalesDTOList =
-                orderMapper.getSalesTop10(beginTime, endTime);
+        List<GoodsSalesDTO> goodsSalesDTOList = orderMapper.getSalesTop10(beginTime, endTime);
 
-        String nameList = StringUtils.join(goodsSalesDTOList
-                .stream().map(GoodsSalesDTO::getName).collect(Collectors.toList()),",");
-        String numberList = StringUtils.join(goodsSalesDTOList
-                .stream().map(GoodsSalesDTO::getNumber).collect(Collectors.toList()),",");
+        String nameList = StringUtils.join(goodsSalesDTOList.stream().map(GoodsSalesDTO::getName).collect(Collectors.toList()),",");
+        String numberList = StringUtils.join(goodsSalesDTOList.stream().map(GoodsSalesDTO::getNumber).collect(Collectors.toList()),",");
 
         return SalesTop10ReportVO.builder()
                 .nameList(nameList)
