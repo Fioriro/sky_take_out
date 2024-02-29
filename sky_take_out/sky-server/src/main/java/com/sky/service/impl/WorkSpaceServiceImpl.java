@@ -39,7 +39,7 @@ public class WorkSpaceServiceImpl implements WorkSpaceService {
      * @return
      */
     @Override
-    public BusinessDataVO getBussinessData(LocalDateTime begin, LocalDateTime end) {
+    public BusinessDataVO getBusinessData(LocalDateTime begin, LocalDateTime end) {
         /**
          * 营业额：当日已完成订单的总金额
          * 有效订单：当日已完成订单的数量

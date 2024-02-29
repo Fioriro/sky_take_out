@@ -40,7 +40,7 @@ public class WorkSpaceController {
         //获取当天结束时间
         LocalDateTime end = LocalDateTime.now().with(LocalTime.MAX);
 
-        BusinessDataVO businessDataVO = workSpaceService.getBussinessData(begin, end);
+        BusinessDataVO businessDataVO = workSpaceService.getBusinessData(begin, end);
         return Result.success(businessDataVO);
     }
 
